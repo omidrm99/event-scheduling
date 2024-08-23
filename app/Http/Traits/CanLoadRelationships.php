@@ -1,4 +1,4 @@
-فقشهف زقشفثی<?php
+<?php
 
 namespace App\Http\Traits;
 
