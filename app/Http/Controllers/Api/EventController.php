@@ -16,7 +16,7 @@ class EventController extends Controller
 
     public function index()
     {
-        $query = $this->loadRelationships(Event::query() );
+        $query = $this->loadRelationships(Event::query());
 
         return EventResource::collection(
             $query->latest()->paginate()
