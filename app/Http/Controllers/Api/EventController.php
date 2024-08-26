@@ -12,10 +12,11 @@ class EventController extends Controller
 {
     use CanLoadRelationships;
 
-    private array $relations = ['user', 'attendees', 'attendees.user'];
+    protected array $relations = ['user', 'attendees', 'attendees.user'];
 
     public function index()
     {
+
         $query = $this->loadRelationships(Event::query());
 
         return EventResource::collection(
