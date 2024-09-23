@@ -44,10 +44,6 @@ class EventController extends Controller
     {
         return new EventResource($this->loadRelationships($event));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Event $event)
     {
         $event->update(
@@ -60,10 +56,6 @@ class EventController extends Controller
         );
         return new EventResource($this->loadRelationships($event));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Event $event)
     {
         $event->delete();
