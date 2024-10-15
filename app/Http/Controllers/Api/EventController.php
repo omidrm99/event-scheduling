@@ -54,9 +54,6 @@ class EventController extends Controller
 
     public function update(Request $request, Event $event)
     {
-        if (Gate::denies('update-event', $event)) {
-            abort(403, 'you are not allowed to update event');
-        }
         $event->update(
             $request->validate([
                 'name' => 'sometimes|string|max:255',

@@ -19,6 +19,7 @@ class AttendeeController extends Controller
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except(['index', 'show', 'update']);
+       // $this->authorizeResource(Attendee::class, 'attendee');
     }
 
     public function index(Event $event)
@@ -52,9 +53,6 @@ class AttendeeController extends Controller
 
     public function destroy(Event $event, Attendee $attendee)
     {
-        if (Gate::denies('delete-attendee', [$event, $attendee])) {
-            abort(403, 'you are not allowed to delete attendee');
-        }
         $attendee->delete();
 
         return response()->json([
