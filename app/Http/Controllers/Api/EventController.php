@@ -7,7 +7,6 @@ use App\Http\Resources\EventResource;
 use App\Http\Traits\CanLoadRelationships;
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
 class EventController extends Controller
 {
